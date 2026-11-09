@@ -1,0 +1,91 @@
+// Sizes from Figma:
+// mobile: image 320x245 full width above the text, text column 260px
+// tablet: image 429x317 on the right, title 340px, text 250px
+// desktop: image 816x464 on the right, title 378px, text 276px
+.hero {
+  @include on-tablet {
+    padding-top: 130px;
+  }
+
+  @include on-desktop {
+    padding-top: 90px;
+  }
+
+  &__container {
+    @include on-tablet {
+      position: relative;
+      min-height: 336px;
+    }
+
+    @include on-desktop {
+      min-height: 465px;
+    }
+  }
+
+  &__image {
+    height: 245px;
+    margin-inline: -$page-padding-mobile;
+    background: $c-gray-100;
+
+    @include on-tablet {
+      position: absolute;
+      top: 18px;
+      right: $page-padding-tablet;
+
+      width: 429px;
+      height: 317px;
+      margin-inline: 0;
+    }
+
+    @include on-desktop {
+      top: 0;
+      right: $page-padding-desktop;
+      width: 816px;
+      height: 464px;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-top: 40px;
+
+    @include on-tablet {
+      gap: 30px;
+      padding-top: 0;
+    }
+
+    @include on-desktop {
+      padding-top: 81px;
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      max-width: 340px;
+    }
+
+    @include on-desktop {
+      max-width: 378px;
+    }
+  }
+
+  &__text {
+    @extend %text-main;
+
+    max-width: 260px;
+    margin: 0;
+
+    @include on-tablet {
+      max-width: 250px;
+    }
+
+    @include on-desktop {
+      max-width: 276px;
+    }
+  }
+}
