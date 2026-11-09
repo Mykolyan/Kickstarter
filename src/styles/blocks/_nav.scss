@@ -1,0 +1,55 @@
+// Inline nav in the header: specs, language switch, buy. Hidden on mobile.
+.nav {
+  display: none;
+  align-items: center;
+
+  @include on-tablet {
+    display: flex;
+  }
+
+  &__link {
+    @extend %text-thirdary;
+
+    display: flex;
+    align-items: center;
+
+    height: 48px;
+    padding: 0 20px;
+
+    color: $c-black;
+    text-decoration: none;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-primary;
+    }
+  }
+
+  &__lang {
+    margin: 0 20px;
+  }
+}
+
+.lang {
+  @extend %text-thirdary;
+
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  &__link {
+    color: $c-gray-500;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &--active {
+      color: $c-black;
+    }
+  }
+
+  &__divider {
+    color: $c-gray-500;
+  }
+}

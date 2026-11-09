@@ -1,4 +1,92 @@
+// Text styles from Figma (mobile first: mobile -> tablet -> desktop)
+
 %h1 {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
+  margin: 0;
+  font-family: $font-main;
+
+  @include text(40px, 52px, $fw-bold, true);
+
+  @include on-tablet {
+    @include text(48px, 62px, $fw-bold, true);
+  }
+
+  @include on-desktop {
+    @include text(64px, 78px, $fw-bold, true);
+  }
+}
+
+%h2 {
+  margin: 0;
+  font-family: $font-main;
+
+  @include text(30px, 40px, $fw-bold, true);
+
+  @include on-tablet {
+    @include text(36px, 46px, $fw-bold, true);
+  }
+
+  @include on-desktop {
+    @include text(56px, 70px, $fw-bold, true);
+  }
+}
+
+%h3 {
+  margin: 0;
+  font-family: $font-main;
+
+  @include text(18px, 22px, $fw-bold, true);
+
+  @include on-tablet {
+    @include text(24px, 30px, $fw-bold, true);
+  }
+
+  @include on-desktop {
+    @include text(34px, 42px, $fw-bold, true);
+  }
+}
+
+// H4-H6 are defined for desktop only
+%h4 {
+  margin: 0;
+  font-family: $font-main;
+
+  @include text(22px, 28px, $fw-bold, true);
+}
+
+%h5 {
+  margin: 0;
+  font-family: $font-main;
+
+  @include text(16px, 22px, $fw-bold);
+}
+
+%h6 {
+  margin: 0;
+  font-family: $font-main;
+
+  @include text(14px, 20px, $fw-bold, true);
+}
+
+%text-main {
+  @include text(16px, 24px);
+}
+
+%text-secondary {
+  @include text(14px, 21px);
+}
+
+%text-thirdary {
+  @include text(14px, 20px, $fw-regular, true);
+}
+
+%text-button {
+  @include text(12px, 14px, $fw-bold, true);
+}
+
+%text-quote {
+  @include text(14px, 20px, $fw-bold);
+
+  @include on-desktop {
+    @include text(24px, 36px, $fw-bold);
+  }
 }

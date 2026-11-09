@@ -1,0 +1,111 @@
+// Base button. Modifiers: --dark, --accent, --outline, --outline-dark, --ghost
+.button {
+  @extend %text-thirdary;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 150px;
+  height: 48px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+
+  font-family: $font-main;
+  color: $c-white;
+  text-decoration: none;
+
+  background: none;
+
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s;
+
+  &:disabled,
+  &--disabled {
+    pointer-events: none;
+  }
+
+  // Filled: dark
+  &--dark {
+    background-color: $c-gray-900;
+
+    &:hover {
+      background-color: $c-black;
+    }
+
+    &:disabled,
+    &.button--disabled {
+      background-color: $c-gray-200;
+    }
+  }
+
+  // Filled: teal
+  &--accent {
+    background-color: $c-accent;
+
+    &:hover {
+      background-color: $c-primary-dark;
+    }
+
+    &:disabled,
+    &.button--disabled {
+      background-color: $c-primary-light;
+    }
+  }
+
+  // Outlined: teal
+  &--outline {
+    border-color: $c-primary;
+    color: $c-primary;
+
+    &:hover {
+      border-color: $c-primary-dark;
+      color: $c-white;
+      background-color: $c-primary-dark;
+    }
+  }
+
+  // Outlined: dark
+  &--outline-dark {
+    border-color: $c-gray-900;
+    color: $c-gray-900;
+
+    &:hover {
+      border-color: $c-black;
+      color: $c-white;
+      background-color: $c-black;
+    }
+  }
+
+  // Text only, gets an outline on hover
+  &--ghost {
+    color: $c-gray-700;
+
+    &:hover {
+      border-color: $c-gray-700;
+    }
+  }
+}
+
+// Text link with underline ("see more")
+.link {
+  @extend %text-thirdary;
+
+  display: inline-block;
+
+  padding-bottom: 6px;
+  border-bottom: 2px solid $c-primary;
+
+  color: $c-primary;
+  text-decoration: none;
+
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: transparent;
+  }
+}

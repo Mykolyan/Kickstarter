@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @extend %text-main;
+
+  margin: 0;
+  font-family: $font-main;
+  color: $c-text;
+  background: $c-background;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Page container: use on every section's inner wrapper
+.page__container {
+  @include page-grid;
+}

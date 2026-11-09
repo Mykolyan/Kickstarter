@@ -4,3 +4,61 @@
     #{$_property}: $_toValue;
   }
 }
+
+// Mobile first media queries
+@mixin on-tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+// Page grid: centered container with side paddings per breakpoint
+// (content is max 1194px wide, which gives 123px side margins at 1440px)
+@mixin page-grid {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $page-max-width;
+  margin-inline: auto;
+  padding-inline: $page-padding-mobile;
+
+  @include on-tablet {
+    padding-inline: $page-padding-tablet;
+  }
+
+  @include on-desktop {
+    padding-inline: $page-padding-desktop;
+  }
+}
+
+// Column grid for content: 4 / 8 / 12 columns
+@mixin columns-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: $grid-gutter-mobile;
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: $grid-gutter-tablet;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: $grid-gutter-desktop;
+  }
+}
+
+@mixin text($size, $line-height, $weight: $fw-regular, $uppercase: false) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+
+  @if $uppercase {
+    text-transform: uppercase;
+  }
+}

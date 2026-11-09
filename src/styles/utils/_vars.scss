@@ -1,1 +1,45 @@
-$c-gray: #eee;
+// Colors (Figma UI Kit)
+$c-primary: #0db2b3;
+$c-primary-light: #cfeff0;
+$c-primary-lighter: #eefafa;
+$c-black: #131313;
+$c-gray-900: #333; // main text color
+$c-gray-700: #4f4f4f;
+$c-gray-500: #7c7c7c;
+$c-gray-300: #bdbdbd;
+$c-gray-200: #d0d0d0;
+$c-gray-100: #f7f7f7;
+$c-white: #fff;
+
+// State colors
+// TODO: $c-accent and $c-primary-dark are estimated from a screenshot
+// (Figma MCP call limit reached), verify them in Figma
+$c-accent: #3bbfc1; // teal button, default
+$c-primary-dark: #0a7b7c; // teal button, hover
+$c-border: #828282; // input border
+$c-error: #eb5757;
+$c-background: $c-white;
+$c-text: $c-gray-900;
+
+// Fonts
+$font-main: 'Inter', sans-serif;
+$fw-regular: 400;
+$fw-bold: 700;
+
+// Breakpoints (min-width, mobile first)
+// Design: mobile 320, tablet 768, desktop 1440. README: tablet 640, desktop 1280.
+$bp-tablet: 640px;
+$bp-desktop: 1280px;
+
+// Page grid
+// mobile: 4 cols x 50px, gutter 20px, side margin 30px
+// tablet: 8 cols x 70px, gutter 20px, side margin 34px
+// desktop: 12 cols x 72px, gutter 30px, side margin 123px (at 1440)
+$page-padding-mobile: 30px;
+$page-padding-tablet: 34px;
+$page-padding-desktop: 34px; // minimum side margin below 1440px
+$page-content-width: 1194px; // 12 * 72 + 11 * 30
+$page-max-width: $page-content-width + $page-padding-desktop * 2;
+$grid-gutter-mobile: 20px;
+$grid-gutter-tablet: 20px;
+$grid-gutter-desktop: 30px;

@@ -6,14 +6,142 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>Luna</title>
     <link
       rel="stylesheet"
       href="src/styles/main.scss"
     />
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <header class="header">
+      <div class="header__container page__container">
+        <a
+          href="#"
+          class="header__logo"
+        >
+          <img
+            src="src/images/Logo.svg"
+            alt="Luna"
+            width="161"
+            height="26"
+          />
+        </a>
+
+        <nav
+          class="nav"
+          aria-label="Main"
+        >
+          <a
+            href="#specs"
+            class="nav__link"
+          >
+            Specs
+          </a>
+
+          <div class="nav__lang lang">
+            <a
+              href="#"
+              class="lang__link lang__link--active"
+              hreflang="en"
+            >
+              EN
+            </a>
+            <span class="lang__divider">/</span>
+            <a
+              href="#"
+              class="lang__link"
+              hreflang="uk"
+            >
+              UA
+            </a>
+          </div>
+
+          <a
+            href="#buy"
+            class="button button--dark"
+          >
+            Buy
+          </a>
+        </nav>
+
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="menu"
+        >
+          <span class="header__burger-line"></span>
+        </button>
+      </div>
+
+      <nav
+        class="menu"
+        id="menu"
+        aria-label="Sections"
+      >
+        <a
+          href="#our-story"
+          class="menu__link"
+        >
+          Our story
+        </a>
+        <a
+          href="#about-us"
+          class="menu__link"
+        >
+          About us
+        </a>
+        <a
+          href="#features"
+          class="menu__link"
+        >
+          Features
+        </a>
+        <a
+          href="#get-in-touch"
+          class="menu__link"
+        >
+          Get in touch
+        </a>
+
+        <!-- Mobile only: the inline header nav is hidden on mobile -->
+        <div class="menu__extra">
+          <a
+            href="#specs"
+            class="menu__link"
+          >
+            Specs
+          </a>
+
+          <div class="lang">
+            <a
+              href="#"
+              class="lang__link lang__link--active"
+              hreflang="en"
+            >
+              EN
+            </a>
+            <span class="lang__divider">/</span>
+            <a
+              href="#"
+              class="lang__link"
+              hreflang="uk"
+            >
+              UA
+            </a>
+          </div>
+
+          <a
+            href="#buy"
+            class="button button--dark"
+          >
+            Buy
+          </a>
+        </div>
+      </nav>
+    </header>
+
     <script src="src/scripts/main.js"></script>
   </body>
 </html>

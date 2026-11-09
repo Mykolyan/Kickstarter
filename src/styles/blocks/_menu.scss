@@ -1,0 +1,54 @@
+// Burger menu: dropdown under the header (mobile and tablet)
+.menu {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  right: 0;
+  left: 0;
+
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 20px $page-padding-mobile 30px;
+
+  background: $c-white;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+
+  .header--open & {
+    display: flex;
+  }
+
+  @include on-tablet {
+    padding-right: $page-padding-tablet;
+    padding-left: $page-padding-tablet;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+
+  // Specs, language and buy: only in the mobile menu
+  &__extra {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    @extend %text-thirdary;
+
+    color: $c-black;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-primary;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.header {
+  position: relative;
+  background: $c-white;
+
+  @include on-tablet {
+    padding-top: 29px;
+  }
+
+  @include on-desktop {
+    padding-top: 30px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+
+    @include on-tablet {
+      height: 48px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-right: auto;
+  }
+
+  // Mobile and tablet: three lines drawn with a span and its pseudo elements
+  &__burger {
+    cursor: pointer;
+
+    position: relative;
+
+    width: 32px;
+    height: 32px;
+    margin-left: 20px;
+    padding: 0;
+    border: 0;
+
+    background: none;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__burger-line,
+  &__burger-line::before,
+  &__burger-line::after {
+    content: '';
+
+    position: absolute;
+    left: 4px;
+
+    width: 24px;
+    height: 2px;
+
+    background: $c-black;
+
+    transition:
+      transform 0.3s,
+      top 0.3s;
+  }
+
+  &__burger-line {
+    top: 15px;
+  }
+
+  &__burger-line::before {
+    top: -8px;
+    left: 0;
+  }
+
+  &__burger-line::after {
+    top: 8px;
+    left: 0;
+  }
+
+  &--open &__burger-line {
+    background: transparent;
+  }
+
+  &--open &__burger-line::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &--open &__burger-line::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
