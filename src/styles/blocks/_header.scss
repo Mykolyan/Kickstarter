@@ -1,5 +1,8 @@
+// Sticks to the top of the viewport while scrolling
 .header {
-  position: relative;
+  position: sticky;
+  z-index: 30;
+  top: 0;
   background: $c-background;
 
   @include on-tablet {
@@ -31,7 +34,7 @@
     margin-right: auto;
   }
 
-  // Mobile and tablet: three lines drawn with a span and its pseudo elements
+  // Mobile and tablet: burger and close icons, cross-faded when the menu opens
   &__burger {
     cursor: pointer;
 
@@ -50,49 +53,24 @@
     }
   }
 
-  &__burger-line,
-  &__burger-line::before,
-  &__burger-line::after {
-    content: '';
-
+  &__icon {
     position: absolute;
-    left: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    width: 24px;
-    height: 2px;
+    transition: opacity 0.3s;
 
-    background: $c-black;
-
-    transition:
-      transform 0.3s,
-      top 0.3s;
+    &--close {
+      opacity: 0;
+    }
   }
 
-  &__burger-line {
-    top: 15px;
+  &--open &__icon--burger {
+    opacity: 0;
   }
 
-  &__burger-line::before {
-    top: -8px;
-    left: 0;
-  }
-
-  &__burger-line::after {
-    top: 8px;
-    left: 0;
-  }
-
-  &--open &__burger-line {
-    background: transparent;
-  }
-
-  &--open &__burger-line::before {
-    top: 0;
-    transform: rotate(45deg);
-  }
-
-  &--open &__burger-line::after {
-    top: 0;
-    transform: rotate(-45deg);
+  &--open &__icon--close {
+    opacity: 1;
   }
 }

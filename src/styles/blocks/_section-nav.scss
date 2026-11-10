@@ -1,0 +1,31 @@
+// Desktop only: full width bar with section links under the hero.
+// On tablet and mobile these links are in the burger menu.
+// Sizes from Figma: 76px high, links centered with 84px between them.
+.section-nav {
+  display: none;
+
+  @include on-desktop {
+    display: flex;
+    gap: 84px;
+    align-items: center;
+    justify-content: center;
+
+    height: 76px;
+    margin-top: 170px;
+
+    // TODO: bar color is a guess (the Figma rectangle color was not read)
+    background: $c-white;
+  }
+
+  &__link {
+    @extend %text-thirdary;
+
+    color: $c-black;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-primary;
+    }
+  }
+}

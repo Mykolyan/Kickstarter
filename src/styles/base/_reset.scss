@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+// anchor links must not end up under the sticky header
+html {
+  scroll-padding-top: 80px;
+}
+
 body {
   @extend %text-main;
 

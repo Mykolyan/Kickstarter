@@ -20,7 +20,7 @@
           class="header__logo"
         >
           <img
-            src="src/images/Logo.svg"
+            src="src/images/logo.svg"
             alt="Luna"
             width="161"
             height="26"
@@ -71,7 +71,22 @@
           aria-expanded="false"
           aria-controls="menu"
         >
-          <span class="header__burger-line"></span>
+          <img
+            class="header__icon header__icon--burger"
+            src="src/images/icons/burger.svg"
+            alt="Menu icon"
+            aria-hidden="true"
+            width="32"
+            height="32"
+          />
+          <img
+            class="header__icon header__icon--close"
+            src="src/images/icons/close.svg"
+            alt="Close icon"
+            aria-hidden="true"
+            width="24"
+            height="24"
+          />
         </button>
       </div>
 
@@ -171,6 +186,112 @@
               layered.
             </p>
           </div>
+        </div>
+      </section>
+
+      <nav
+        class="section-nav"
+        aria-label="Sections"
+      >
+        <a
+          href="#our-story"
+          class="section-nav__link"
+        >
+          Our story
+        </a>
+        <a
+          href="#about-us"
+          class="section-nav__link"
+        >
+          About us
+        </a>
+        <a
+          href="#features"
+          class="section-nav__link"
+        >
+          Features
+        </a>
+        <a
+          href="#get-in-touch"
+          class="section-nav__link"
+        >
+          Get in touch
+        </a>
+      </nav>
+
+      <section class="benefits">
+        <div class="benefits__container page__container">
+          <ul class="benefits__list">
+            <li class="benefits__item">
+              <img
+                class="benefits__icon"
+                src="src/images/benefits/futuristic-design.svg"
+                alt="Futuristic design icon"
+                aria-hidden="true"
+                width="70"
+                height="50"
+              />
+              <h2 class="benefits__title">Futuristic Design</h2>
+              <p class="benefits__text">
+                To give Luna a truly flawless look, we specifically picked
+                aircraft grade aluminum as its material and adopted both
+                three-dimensional stretch-bending technology and a high
+                precision cold forging technique.
+              </p>
+            </li>
+
+            <li class="benefits__item">
+              <img
+                class="benefits__icon"
+                src="src/images/benefits/tweeter-speaker.svg"
+                alt="Tweeter speaker icon"
+                aria-hidden="true"
+                width="70"
+                height="50"
+              />
+              <h2 class="benefits__title">Tweeter Speaker System</h2>
+              <p class="benefits__text">
+                To deliver a more layered sound performance better than a sole
+                full-range speaker, our team equipped Luna with one more
+                tweeter speaker responsible for high-frequency sound
+                independently.
+              </p>
+            </li>
+
+            <li class="benefits__item">
+              <img
+                class="benefits__icon"
+                src="src/images/benefits/multiroom.svg"
+                alt="Multiroom icon"
+                aria-hidden="true"
+                width="70"
+                height="50"
+              />
+              <h2 class="benefits__title">Multiroom System</h2>
+              <p class="benefits__text">
+                Luna is natively compatible with your home Wi-Fi. Set up
+                multiple speakers in different rooms to expand your music
+                experience into the entire house.
+              </p>
+            </li>
+
+            <li class="benefits__item">
+              <img
+                class="benefits__icon"
+                src="src/images/benefits/lighting.svg"
+                alt="Lighting icon"
+                aria-hidden="true"
+                width="70"
+                height="50"
+              />
+              <h2 class="benefits__title">Intuitive Lighting System</h2>
+              <p class="benefits__text">
+                An intuitive user interface allows you to adjust the hue and
+                saturation of color for lighting that fits any mood and
+                situation.
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
