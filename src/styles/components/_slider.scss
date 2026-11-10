@@ -1,0 +1,130 @@
+// Generic mobile slider (see scripts/slider.js).
+// Works with native scroll-snap, so swipe needs no JS.
+// The JS only adds the arrows, the counter and the disabled state.
+// Mark up: .slider > .slider__track (slides) + .slider__controls
+// Used on mobile only; from tablet up the track is a normal grid/row.
+
+.slider {
+  // controls are shown by JS (class slider--ready), only on mobile
+  &__controls {
+    display: none;
+  }
+
+  &--ready &__controls {
+    @include on-mobile {
+      display: grid;
+      grid-template-columns: 48px 48px;
+      justify-content: center;
+
+      width: fit-content;
+      margin: 40px auto 0;
+    }
+  }
+
+  // the track is a list: no default list margin, padding and bullets
+  &__track {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  // the track is full width (negative margin + padding), so a swipe also works on the page paddings
+  @include on-mobile {
+    &__track {
+      scrollbar-width: none;
+      scroll-padding-inline: $page-padding-mobile;
+      scroll-snap-type: x mandatory;
+
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      display: flex;
+      gap: $page-padding-mobile * 2; // hides the edge of the next slide
+
+      margin-inline: -$page-padding-mobile;
+      padding-inline: $page-padding-mobile;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      > * {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        flex: 0 0 100%;
+      }
+    }
+  }
+
+  // arrow icon is a mask, so one svg gets the normal, hover and disabled colors
+  &__button {
+    cursor: pointer;
+
+    position: relative;
+
+    // 13px arrow with a bigger click area
+    width: 48px;
+    height: 33px;
+    padding: 0;
+    border: 0;
+
+    color: $c-gray-900;
+
+    background: none;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      inset: 10px 0;
+
+      background-color: currentcolor;
+
+      transition: background-color 0.3s;
+
+      mask-image: url('/src/images/icons/slider-arrow.svg');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+    }
+
+    &:hover {
+      color: $c-primary-dark;
+    }
+
+    &:disabled {
+      cursor: default;
+      color: $c-gray-300;
+    }
+
+    // the next arrow overlaps the previous one by 3px, as in the design
+    &--next {
+      margin-left: -3px;
+    }
+
+    // same icon turned around
+    &--prev::before {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__counter {
+    display: flex;
+    grid-column: 1 / -1;
+    gap: 4px;
+    align-items: baseline;
+    justify-self: center;
+
+    margin: 0;
+  }
+
+  &__current {
+    font-size: 20px;
+    line-height: 24px;
+    color: $c-gray-900;
+  }
+
+  &__total {
+    font-size: 12px;
+    line-height: 14px;
+    color: $c-gray-300;
+  }
+}

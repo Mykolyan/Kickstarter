@@ -1,5 +1,9 @@
 'use strict';
 
+import { initSliders } from './slider.js';
+
+initSliders();
+
 const header = document.querySelector('.header');
 const logo = document.querySelector('.header__logo');
 const burger = document.querySelector('.header__burger');

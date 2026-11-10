@@ -221,81 +221,110 @@
 
       <section class="benefits">
         <div class="benefits__container page__container">
-          <ul class="benefits__list">
-            <li class="benefits__item">
-              <img
-                class="benefits__icon"
-                src="src/images/benefits/futuristic-design.svg"
-                alt="Futuristic design icon"
-                aria-hidden="true"
-                width="70"
-                height="50"
-              />
-              <h2 class="benefits__title">Futuristic Design</h2>
-              <p class="benefits__text">
-                To give Luna a truly flawless look, we specifically picked
-                aircraft grade aluminum as its material and adopted both
-                three-dimensional stretch-bending technology and a high
-                precision cold forging technique.
-              </p>
-            </li>
+          <div
+            class="slider"
+            data-slider="benefits"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Benefits"
+          >
+            <ul class="benefits__list slider__track" data-slider-track="track">
+              <li class="benefits__item">
+                <img
+                  class="benefits__icon"
+                  src="src/images/benefits/futuristic-design.svg"
+                  alt="Futuristic design icon"
+                  aria-hidden="true"
+                  width="70"
+                  height="50"
+                />
+                <h2 class="benefits__title">Futuristic Design</h2>
+                <p class="benefits__text">
+                  To give Luna a truly flawless look, we specifically picked
+                  aircraft grade aluminum as its material and adopted both
+                  three-dimensional stretch-bending technology and a high
+                  precision cold forging technique.
+                </p>
+              </li>
 
-            <li class="benefits__item">
-              <img
-                class="benefits__icon"
-                src="src/images/benefits/tweeter-speaker.svg"
-                alt="Tweeter speaker icon"
-                aria-hidden="true"
-                width="70"
-                height="50"
-              />
-              <h2 class="benefits__title">Tweeter Speaker System</h2>
-              <p class="benefits__text">
-                To deliver a more layered sound performance better than a sole
-                full-range speaker, our team equipped Luna with one more
-                tweeter speaker responsible for high-frequency sound
-                independently.
-              </p>
-            </li>
+              <li class="benefits__item">
+                <img
+                  class="benefits__icon"
+                  src="src/images/benefits/tweeter-speaker.svg"
+                  alt="Tweeter speaker icon"
+                  aria-hidden="true"
+                  width="70"
+                  height="50"
+                />
+                <h2 class="benefits__title">Tweeter Speaker System</h2>
+                <p class="benefits__text">
+                  To deliver a more layered sound performance better than a sole
+                  full-range speaker, our team equipped Luna with one more
+                  tweeter speaker responsible for high-frequency sound
+                  independently.
+                </p>
+              </li>
 
-            <li class="benefits__item">
-              <img
-                class="benefits__icon"
-                src="src/images/benefits/multiroom.svg"
-                alt="Multiroom icon"
-                aria-hidden="true"
-                width="70"
-                height="50"
-              />
-              <h2 class="benefits__title">Multiroom System</h2>
-              <p class="benefits__text">
-                Luna is natively compatible with your home Wi-Fi. Set up
-                multiple speakers in different rooms to expand your music
-                experience into the entire house.
-              </p>
-            </li>
+              <li class="benefits__item">
+                <img
+                  class="benefits__icon"
+                  src="src/images/benefits/multiroom.svg"
+                  alt="Multiroom icon"
+                  aria-hidden="true"
+                  width="70"
+                  height="50"
+                />
+                <h2 class="benefits__title">Multiroom System</h2>
+                <p class="benefits__text">
+                  Luna is natively compatible with your home Wi-Fi. Set up
+                  multiple speakers in different rooms to expand your music
+                  experience into the entire house.
+                </p>
+              </li>
 
-            <li class="benefits__item">
-              <img
-                class="benefits__icon"
-                src="src/images/benefits/lighting.svg"
-                alt="Lighting icon"
-                aria-hidden="true"
-                width="70"
-                height="50"
-              />
-              <h2 class="benefits__title">Intuitive Lighting System</h2>
-              <p class="benefits__text">
-                An intuitive user interface allows you to adjust the hue and
-                saturation of color for lighting that fits any mood and
-                situation.
+              <li class="benefits__item">
+                <img
+                  class="benefits__icon"
+                  src="src/images/benefits/lighting.svg"
+                  alt="Lighting icon"
+                  aria-hidden="true"
+                  width="70"
+                  height="50"
+                />
+                <h2 class="benefits__title">Intuitive Lighting System</h2>
+                <p class="benefits__text">
+                  An intuitive user interface allows you to adjust the hue and
+                  saturation of color for lighting that fits any mood and
+                  situation.
+                </p>
+              </li>
+            </ul>
+
+            <div class="slider__controls">
+              <button
+                class="slider__button slider__button--prev"
+                type="button"
+                aria-label="Previous slide"
+                data-slider-prev="prev"
+              ></button>
+              <button
+                class="slider__button slider__button--next"
+                type="button"
+                aria-label="Next slide"
+                data-slider-next="next"
+              ></button>
+              <p class="slider__counter" aria-live="polite">
+                <span class="slider__current" data-slider-current="current">01</span>
+                <span class="slider__total">
+                  / <span data-slider-total="total">04</span>
+                </span>
               </p>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <script src="src/scripts/main.js"></script>
+    <script type="module" src="src/scripts/main.js"></script>
   </body>
 </html>

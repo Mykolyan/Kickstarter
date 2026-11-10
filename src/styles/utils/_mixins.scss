@@ -12,6 +12,13 @@
   }
 }
 
+// Mobile only (below the tablet breakpoint), for things that exist only on mobile
+@mixin on-mobile {
+  @media (max-width: #{$bp-tablet - 1px}) {
+    @content;
+  }
+}
+
 @mixin on-desktop {
   @media (min-width: $bp-desktop) {
     @content;
