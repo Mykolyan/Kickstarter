@@ -1,0 +1,129 @@
+// Sizes from Figma:
+// mobile: social icons, then the copyright (260px wide), no logo
+// tablet and desktop: logo, social icons, copyright, 60px between them
+// tablet and desktop: 48px back to top button in the top right corner
+// space above the footer: 110px mobile, 140px tablet, 170px desktop
+// space under the copyright: 20px mobile, 30px tablet and desktop
+.footer {
+  margin-top: 110px;
+  padding-bottom: 20px;
+
+  @include on-tablet {
+    margin-top: 140px;
+    padding-bottom: 30px;
+  }
+
+  @include on-desktop {
+    margin-top: 170px;
+  }
+
+  &__container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+
+    text-align: center;
+
+    @include on-tablet {
+      gap: 60px;
+    }
+  }
+
+  &__logo {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 40px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include on-tablet {
+      gap: 49px;
+    }
+
+    @include on-desktop {
+      gap: 40px;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__copyright {
+    @extend %text-secondary;
+
+    max-width: 260px;
+    margin: 0;
+
+    @include on-tablet {
+      max-width: none;
+    }
+  }
+
+  &__link {
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-primary;
+    }
+  }
+
+  // icon is a mask, so it can change color on hover
+  &__top {
+    position: absolute;
+    top: 0;
+    right: $page-padding-tablet;
+
+    display: none;
+
+    width: 48px;
+    height: 48px;
+
+    color: $c-gray-900;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      inset: 12px;
+
+      background-color: currentcolor;
+
+      transition: background-color 0.3s;
+
+      mask-image: url('/src/images/icons/back-to-top.svg');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+    }
+
+    &:hover {
+      color: $c-primary-dark;
+    }
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      right: $page-padding-desktop;
+    }
+  }
+}
