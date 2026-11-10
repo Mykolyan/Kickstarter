@@ -18,8 +18,12 @@ $c-accent: #3bbfc1; // teal button, default
 $c-primary-dark: #0a7b7c; // teal button, hover
 $c-border: #828282; // input border
 $c-error: #eb5757;
-$c-background: $c-white;
+$c-background: $c-gray-100;
 $c-text: $c-gray-900;
+
+// Header bar height (tablet: 29px top space + 48px)
+$header-height-mobile: 76px;
+$header-height-tablet: 77px;
 
 // Fonts
 $font-main: 'Inter', sans-serif;

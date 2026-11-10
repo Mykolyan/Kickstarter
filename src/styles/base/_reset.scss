@@ -22,8 +22,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-// Page container: use on every section's inner wrapper
-.page__container {
-  @include page-grid;
-}

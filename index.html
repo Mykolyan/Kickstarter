@@ -145,8 +145,23 @@
     <main>
       <section class="hero">
         <div class="hero__container page__container">
-          <!-- TODO: replace with the speaker image exported from Figma -->
-          <div class="hero__image"></div>
+          <picture class="hero__picture">
+            <source
+              media="(min-width: 1280px)"
+              srcset="src/images/hero/hero-desktop.png"
+            />
+            <source
+              media="(min-width: 640px)"
+              srcset="src/images/hero/hero-tablet.png"
+            />
+            <img
+              class="hero__image"
+              src="src/images/hero/hero-mobile.png"
+              alt="Two Luna wireless speakers"
+              width="320"
+              height="245"
+            />
+          </picture>
 
           <div class="hero__content">
             <h1 class="hero__title">Futuristic Wireless Speaker</h1>

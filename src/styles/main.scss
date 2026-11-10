@@ -1,9 +1,18 @@
+// 1. Tools: variables, mixins, placeholders (no CSS output)
 @import 'utils';
-@import 'fonts';
-@import 'base';
-@import 'typography';
-@import 'buttons';
-@import 'forms';
+
+// 2. Base: fonts, reset, page container, headings
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/page';
+@import 'base/typography';
+
+// 3. Components: reusable elements
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/lang';
+
+// 4. Blocks: page sections
 @import 'blocks/header';
 @import 'blocks/nav';
 @import 'blocks/menu';

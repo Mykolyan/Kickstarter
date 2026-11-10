@@ -1,31 +1,33 @@
-// Burger menu: dropdown under the header (mobile and tablet)
+// Burger menu: full viewport overlay under the header bar (mobile and tablet)
 .menu {
-  position: absolute;
+  position: fixed;
   z-index: 10;
-  top: 100%;
-  right: 0;
-  left: 0;
+  inset: 0;
+  transform: translateY(-16px);
 
-  display: none;
+  overflow-y: auto;
+  display: flex;
   flex-direction: column;
   gap: 20px;
 
-  padding: 20px $page-padding-mobile 30px;
+  // header bar height (76px mobile) + space before the first link
+  padding: ($header-height-mobile + 30px) $page-padding-mobile 30px;
 
-  background: $c-white;
-  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+  visibility: hidden;
+  opacity: 0;
+  background: $c-background;
+
+  // visibility switches after the fade out, so the menu is not focusable when closed
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
 
   .header--open & {
-    display: flex;
-  }
-
-  @include on-tablet {
-    padding-right: $page-padding-tablet;
-    padding-left: $page-padding-tablet;
-  }
-
-  @include on-desktop {
-    display: none;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
   }
 
   // Specs, language and buy: only in the mobile menu
@@ -50,5 +52,19 @@
     &:hover {
       color: $c-primary;
     }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  @include on-tablet {
+    padding-top: ($header-height-tablet + 30px);
+    padding-right: $page-padding-tablet;
+    padding-left: $page-padding-tablet;
+  }
+
+  @include on-desktop {
+    display: none;
   }
 }

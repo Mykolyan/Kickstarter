@@ -1,0 +1,23 @@
+// Language switch (EN / UA), used in the header nav and in the mobile menu
+.lang {
+  @extend %text-thirdary;
+
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  &__link {
+    color: $c-gray-500;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &--active {
+      color: $c-black;
+    }
+  }
+
+  &__divider {
+    color: $c-gray-500;
+  }
+}

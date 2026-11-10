@@ -1,0 +1,9 @@
+// Page container: use on every section's inner wrapper
+.page__container {
+  @include page-grid;
+}
+
+// no page scroll behind the open menu
+.page--locked {
+  overflow: hidden;
+}
